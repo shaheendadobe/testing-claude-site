@@ -1,0 +1,61 @@
+/* Canada Post Track Block */
+.track-container {
+  background: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 32px 24px;
+}
+
+.track {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.track h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.track p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0 0 16px;
+}
+
+.track p:last-child { margin-bottom: 0; }
+
+.track a:any-link {
+  display: inline-block;
+  background-color: #cc0000;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.track a:hover {
+  background-color: #a30000;
+}
+
+@media (width >= 900px) {
+  .track-container {
+    padding: 32px 40px;
+  }
+
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .track > div {
+    flex: 1;
+  }
+
+  .track h2 { margin-bottom: 4px; }
+  .track p { margin-bottom: 0; }
+}
