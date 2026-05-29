@@ -1,61 +1,122 @@
-/* Canada Post Track Block */
+/* Canada Post Track Widget — white card overlapping hero */
 .track-container {
-  background: #fff;
-  border-bottom: 2px solid #e0e0e0;
-  padding: 32px 24px;
+  background: transparent;
+  padding: 0 24px;
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
 }
 
 .track {
-  max-width: 1200px;
-  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+/* Header row */
+.track > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 0;
 }
 
 .track h2 {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 8px;
+  margin: 0;
 }
 
-.track p {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 0 0 16px;
+/* "Track multiple >" link style */
+.track > div:first-child p {
+  margin: 0;
 }
 
-.track p:last-child { margin-bottom: 0; }
+.track > div:first-child a:any-link {
+  color: #2c73ca;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
 
-.track a:any-link {
+.track > div:first-child a:hover { text-decoration: underline; }
+
+/* Input + button row */
+.track > div:nth-child(2) {
+  padding: 12px 20px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.track > div:nth-child(2) p {
+  margin: 0;
+  flex: 1;
+}
+
+.track > div:nth-child(2) p:first-child {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.track > div:nth-child(2) a:any-link {
   display: inline-block;
-  background-color: #cc0000;
+  background: #1a3a6b;
   color: #fff;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 12px 28px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
+  white-space: nowrap;
   transition: background 0.2s;
 }
 
-.track a:hover {
-  background-color: #a30000;
+.track > div:nth-child(2) a:hover { background: #142d55; }
+
+/* Tool links list */
+.track ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #eee;
+}
+
+.track ul li {
+  border-bottom: 1px solid #eee;
+}
+
+.track ul li:last-child { border-bottom: none; }
+
+.track ul li a:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.track ul li a:hover { background: #f5f8ff; }
+
+.track ul li a::after {
+  content: '›';
+  font-size: 1.2rem;
+  color: #2c73ca;
 }
 
 @media (width >= 900px) {
   .track-container {
-    padding: 32px 40px;
+    padding: 0 40px;
   }
-
-  .track {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .track > div {
-    flex: 1;
-  }
-
-  .track h2 { margin-bottom: 4px; }
-  .track p { margin-bottom: 0; }
 }
