@@ -1,4 +1,4 @@
-/* Canada Post Columns Block */
+/* Canada Post Columns — image+text side by side */
 .columns-container {
   padding: 48px 24px;
   background: #fff;
@@ -7,53 +7,87 @@
 .columns > div {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Section heading row */
-.columns > div:first-child > div:only-child h2 {
-  font-size: 1.5rem;
+.columns img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.columns > div > div { flex: 1; }
+
+/* Text content side */
+.columns > div > div:not(.columns-img-col) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columns h2 {
+  font-size: 1.6rem;
   font-weight: 700;
   color: #1a1a1a;
-  border-bottom: 3px solid #2c73ca;
-  padding-bottom: 12px;
-  margin: 0;
+  margin: 0 0 16px;
+  line-height: 1.25;
 }
 
-/* Individual column cards */
-.columns > div > div {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-top: 4px solid #2c73ca;
-  border-radius: 6px;
-  padding: 24px;
-  box-sizing: border-box;
-  flex: 1;
+.columns p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0 0 24px;
+  line-height: 1.6;
 }
 
-.columns h2 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin: 0 0 12px; }
-.columns h3 { font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin: 0 0 10px; }
-.columns p  { font-size: 0.88rem; color: #555; margin: 0 0 16px; line-height: 1.5; }
 .columns p:last-child { margin-bottom: 0; }
-.columns img { width: 100%; border-radius: 4px; }
+
+/* Button group — support filled + outlined side by side */
+.columns .button-container,
+.columns p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0;
+}
 
 .columns a:any-link {
   display: inline-block;
-  background-color: #2c73ca;
+  background: #1a3a6b;
   color: #fff;
   font-weight: 700;
-  font-size: 0.85rem;
-  padding: 9px 18px;
+  font-size: 0.9rem;
+  padding: 11px 24px;
   border-radius: 50px;
   text-decoration: none;
   transition: background 0.2s;
 }
-.columns a:hover { background-color: #1a5aaa; }
+
+.columns a:hover { background: #142d55; }
+
+/* Second link in same paragraph = outlined style */
+.columns p a:any-link + a:any-link,
+.columns p:has(a) a:last-child {
+  background: transparent;
+  color: #1a3a6b;
+  border: 2px solid #1a3a6b;
+}
+
+.columns p a:any-link + a:any-link:hover,
+.columns p:has(a) a:last-child:hover {
+  background: #f0f4ff;
+}
 
 @media (width >= 900px) {
-  .columns-container { padding: 56px 40px; }
-  .columns > div { flex-direction: row; align-items: stretch; }
-  .columns > div > div { order: unset; }
+  .columns-container { padding: 64px 40px; }
+
+  .columns > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .columns h2 { font-size: 2rem; }
 }
