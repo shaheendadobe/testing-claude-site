@@ -1,3 +1,4 @@
+/* Canada Post Hero Block */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +6,77 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  background-color: #cc0000;
+  color: #fff;
+  padding: 56px 24px;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.2;
+  max-width: 560px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 0 24px;
+  max-width: 520px;
+}
+
+.hero p:last-child { margin-bottom: 0; }
+
+.hero a:any-link {
+  display: inline-block;
+  background-color: #fff;
+  color: #cc0000;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero a:hover {
+  background-color: #f0f0f0;
 }
 
 .hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  opacity: 0.18;
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 80px 40px;
+    min-height: 440px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
   }
 }
