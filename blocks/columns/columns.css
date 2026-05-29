@@ -1,14 +1,25 @@
+/* Canada Post Columns Block */
+.columns-container {
+  padding: 48px 24px;
+  background: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .columns img {
   width: 100%;
+  border-radius: 4px;
 }
 
 .columns > div > div {
   order: 1;
+  flex: 1;
 }
 
 .columns > div > .columns-img-col {
@@ -19,10 +30,64 @@
   display: block;
 }
 
+/* First div used as section heading row */
+.columns > div:first-child > div:only-child h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  border-bottom: 3px solid #cc0000;
+  padding-bottom: 12px;
+  margin-bottom: 0;
+}
+
+/* Business-solutions card style for child divs */
+.columns > div:not(:first-child) > div {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid #cc0000;
+  border-radius: 4px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.columns h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+
+.columns p {
+  font-size: 0.92rem;
+  color: #444;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.columns a:any-link {
+  display: inline-block;
+  background-color: #cc0000;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.columns a:hover {
+  background-color: #a30000;
+}
+
 @media (width >= 900px) {
+  .columns-container {
+    padding: 56px 40px;
+  }
+
   .columns > div {
-    align-items: center;
-    flex-direction: unset;
+    align-items: stretch;
+    flex-direction: row;
     gap: 24px;
   }
 
