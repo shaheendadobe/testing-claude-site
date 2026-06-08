@@ -1,0 +1,77 @@
+/* Countdown Block — live timer tiles */
+.countdown {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+.countdown .countdown-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+}
+
+.countdown .countdown-display {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* an explicit display value overrides the [hidden] attribute, so restore it */
+.countdown .countdown-display[hidden] {
+  display: none;
+}
+
+.countdown .countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1a3a6b;
+  border-radius: 10px;
+  padding: 16px 10px;
+  min-width: 72px;
+}
+
+.countdown .countdown-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown .countdown-label {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cfe0f5;
+}
+
+.countdown .countdown-expired {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #da291c;
+}
+
+@media (width >= 600px) {
+  .countdown .countdown-display {
+    gap: 20px;
+  }
+
+  .countdown .countdown-unit {
+    min-width: 96px;
+    padding: 20px 16px;
+  }
+
+  .countdown .countdown-value {
+    font-size: 3rem;
+  }
+
+  .countdown .countdown-label {
+    font-size: 0.78rem;
+  }
+}
