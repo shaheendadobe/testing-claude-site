@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"DAprod": {
+			"url": "https://mcp.adobeaemcloud.com/adobe/mcp/da",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
