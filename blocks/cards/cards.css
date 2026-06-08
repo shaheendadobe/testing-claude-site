@@ -29,7 +29,7 @@
 
 .cards > ul > li:hover,
 .cards > div > div:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
 }
 
 /* Card image */
@@ -130,7 +130,11 @@
 }
 
 .cards.icon-cards a:any-link::after { content: ' ›'; }
-.cards.icon-cards a:hover { background: transparent; text-decoration: underline; }
+
+.cards.icon-cards a:hover {
+  background: transparent;
+  text-decoration: underline;
+}
 
 @media (width >= 900px) {
   .cards-container { padding: 56px 40px; }
